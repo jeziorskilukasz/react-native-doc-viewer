@@ -1,13 +1,18 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.philipphecht">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.philipphecht">
  <application>
       <provider
             android:name="com.philipphecht.FileProviderClass"
             android:authorities="${applicationId}.docViewer_provider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities"
+      >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
+                android:resource="@xml/filepaths"
+                tools:replace="android:resource"/>
         </provider>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
